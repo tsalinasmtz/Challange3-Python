@@ -28,7 +28,18 @@ with open('./Resources/budget_data.csv', 'r') as csvfile:
         previous_profit = profit
     
     avg_change = sum(profit_changes) / len(profit_changes)
-# Results
+
+# Results printed in Terminal
+    print("---------------------------")
+    print(f"Total Months: {month}")
+    print(f"Total: ${totalprofit}")
+    print(f"Average Change: ${round(avg_change, 2)}")
+    print(f"Greatest Increase in Profits: {greatest_increase[0]} (${greatest_increase[1]})")
+    print(f"Greatest Decrease in Profits: {greatest_decrease[0]} (${greatest_decrease[1]})")
+
+
+
+# Results printed on txt
 with open("./Analysis/profitloss.txt", "a") as f:
     print("Financial Analysis", file=f)
     print("---------------------------", file=f)

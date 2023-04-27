@@ -35,7 +35,18 @@ with open('./Resources/election_data.csv', 'r') as csvfile:
 
     winner = max(votes_per_candidate, key=votes_per_candidate.get)
 
-    # Print the results
+    # Print the results in Terminal
+    print("Election Results")
+    print("-------------------------")
+    print(f"Total Votes: {total_votes}")
+    print("-------------------------")
+    for candidate in candidates:
+        print(f"{candidate}: {vote_percentages[candidate]:.3f}% ({votes_per_candidate[candidate]})")
+    print("-------------------------")
+    print(f"Winner: {winner}")
+    print("-------------------------")
+
+    # Print the results in Excel
 with open("./Analysis/elections.txt", "a") as f:
     print("Election Results", file=f)
     print("-------------------------", file=f)
